@@ -1,0 +1,238 @@
+<title>Forgeon Technologies — Free Automation Audit</title>
+<style>
+  .fg-page *,
+  .fg-page *::before,
+  .fg-page *::after { box-sizing: border-box; }
+
+  .fg-page {
+    /* Brand tokens, taken from the --forgeon-* custom properties on the site. */
+    --navy: #071524;
+    --midnight: #0b1f3a;
+    --slate: #16283f;
+    --blue: #0066ff;
+    --cyan: #00f2ff;
+    --muted: #9fb0c4;
+    --light: #e5e7eb;
+    --line: rgba(159, 176, 196, .18);
+
+    margin: 0;
+    padding: 0;
+    background: var(--navy);
+    background-image:
+      radial-gradient(1100px 620px at 78% -8%, rgba(0, 102, 255, .30), transparent 62%),
+      radial-gradient(760px 520px at 6% 104%, rgba(0, 242, 255, .11), transparent 66%);
+    color: var(--light);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                 "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .fg-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 24px 72px;
+  }
+
+  .fg-logo { display: block; width: 236px; max-width: 62%; height: auto; margin-bottom: 56px; }
+
+  .fg-eyebrow {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  .fg-rule {
+    width: 104px; height: 6px; border-radius: 3px; margin: 0 0 26px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+  }
+
+  .fg-h1 {
+    margin: 0 0 20px;
+    font-size: clamp(32px, 5.2vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -.022em;
+    font-weight: 800;
+    color: #fff;
+    max-width: 15ch;
+  }
+
+  .fg-lede {
+    margin: 0 0 8px;
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--muted);
+    max-width: 54ch;
+  }
+
+  .fg-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 56px;
+    align-items: start;
+    margin-top: 56px;
+  }
+
+  .fg-h2 {
+    margin: 0 0 22px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+
+  .fg-steps { list-style: none; margin: 0 0 34px; padding: 0; display: grid; gap: 14px; }
+
+  .fg-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .035);
+  }
+
+  .fg-step-n {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(0, 102, 255, .18);
+    border: 1px solid rgba(0, 242, 255, .45);
+    color: var(--cyan);
+    font-size: 15px; font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .fg-step-t { margin: 0 0 3px; font-size: 17px; font-weight: 650; color: #fff; }
+  .fg-step-d { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .fg-note {
+    margin: 0;
+    padding: 18px 20px;
+    border-left: 3px solid var(--cyan);
+    background: rgba(0, 242, 255, .05);
+    border-radius: 0 10px 10px 0;
+    font-size: 15.5px;
+    color: var(--light);
+  }
+  .fg-note strong { color: #fff; }
+
+  .fg-card {
+    padding: 32px;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 242, 255, .26);
+    background: linear-gradient(180deg, var(--midnight), var(--slate));
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .42);
+  }
+
+  .fg-card-h { margin: 0 0 6px; font-size: 23px; font-weight: 750; color: #fff; letter-spacing: -.01em; }
+  .fg-card-s { margin: 0 0 24px; font-size: 15.5px; color: var(--muted); }
+
+
+  .fg-foot {
+    margin-top: 56px; padding-top: 26px;
+    border-top: 1px solid var(--line);
+    font-size: 14px; color: var(--muted);
+    display: flex; flex-wrap: wrap; gap: 8px 28px;
+  }
+  .fg-foot a { color: var(--cyan); text-decoration: none; }
+  .fg-foot a:hover { text-decoration: underline; }
+
+  @media (max-width: 860px) {
+    .fg-grid { grid-template-columns: 1fr; gap: 42px; }
+    .fg-h1 { max-width: none; }
+    .fg-card { padding: 26px; }
+  }
+</style>
+
+<div class="fg-page">
+  <div class="fg-wrap">
+
+    <img class="fg-logo"
+         src="https://raw.githubusercontent.com/geestreet/forgeon-post-assets/main/brand/forgeon-logo.png"
+         alt="Forgeon Technologies">
+
+    <p class="fg-eyebrow">Free automation audit</p>
+    <div class="fg-rule"></div>
+    <h1 class="fg-h1">Tell us your most repetitive task. We'll show you what automating it looks like.</h1>
+    <p class="fg-lede">
+      No cost, no obligation, no sales deck. You describe one job your team does over
+      and over — we map what it costs you today and what it would look like automated.
+    </p>
+
+    <div class="fg-grid">
+      <div>
+        <h2 class="fg-h2">What actually happens</h2>
+
+        <ol class="fg-steps">
+          <li class="fg-step">
+            <span class="fg-step-n">1</span>
+            <div>
+              <p class="fg-step-t">You describe the task</p>
+              <p class="fg-step-d">One paragraph is plenty. The messier it is, the more useful it is to us.</p>
+            </div>
+          </li>
+          <li class="fg-step">
+            <span class="fg-step-n">2</span>
+            <div>
+              <p class="fg-step-t">We map it, start to finish</p>
+              <p class="fg-step-d">Every step, who touches it, where it stalls, and roughly what it costs per month.</p>
+            </div>
+          </li>
+          <li class="fg-step">
+            <span class="fg-step-n">3</span>
+            <div>
+              <p class="fg-step-t">You get the before and after</p>
+              <p class="fg-step-d">A short walkthrough of the automated version, the hours it saves, and what it would take to build.</p>
+            </div>
+          </li>
+        </ol>
+
+        <p class="fg-note">
+          <strong>Sometimes the answer is that it isn't worth automating.</strong>
+          When that's true we say so. A job done twice a month by one person who
+          never gets it wrong is not a job worth paying to automate.
+        </p>
+      </div>
+
+      <div class="fg-card">
+        <h2 class="fg-card-h">Book your audit</h2>
+        <p class="fg-card-s">Takes about a minute. We reply within one business day.</p>
+
+        <!-- EngageBay form "Free Automation Audit" (form id 5148115217416192).
+             Submissions land directly in the EngageBay CRM — no API call, so this
+             works regardless of the REST API plan tier. -->
+        <div class="engage-hub-form-embed"
+             id="eh_form_5148115217416192"
+             data-id="5148115217416192"></div>
+      </div>
+    </div>
+
+    <div class="fg-foot">
+      <span>Forgeon Technologies LLC</span>
+      <span>AI automation · Cloud adoption · Managed IT</span>
+      <a href="mailto:info@forgeon.tech">info@forgeon.tech</a>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+var EhAPI = EhAPI || {}; EhAPI.after_load = function(){
+  EhAPI.set_account('svabg127q3sa9ud1t5lkmhi8de', 'forgeon');
+  EhAPI.execute('rules');
+};(function(d,s,f){
+  var sc=d.createElement(s);sc.type='text/javascript';
+  sc.async=true;sc.src=f;var m=d.getElementsByTagName(s)[0];
+  m.parentNode.insertBefore(sc,m);
+})(document,'script','//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js?v'+new Date().getHours());
+</script>
+<script>
+(window.EhDynamicRef ||= []).push(() => {
+  EhForms.create({ "formId": "5148115217416192" });
+});
+</script>
