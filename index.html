@@ -67,13 +67,7 @@
     max-width: 54ch;
   }
 
-  .fg-grid {
-    display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    gap: 56px;
-    align-items: start;
-    margin-top: 56px;
-  }
+  .fg-top { margin-top: 56px; }
 
   .fg-h2 {
     margin: 0 0 22px;
@@ -84,7 +78,12 @@
     color: var(--cyan);
   }
 
-  .fg-steps { list-style: none; margin: 0 0 34px; padding: 0; display: grid; gap: 14px; }
+  /* Three across once there's room; the page is full-width now that the
+     form moved below, so a single vertical column would waste it. */
+  .fg-steps {
+    list-style: none; margin: 0 0 34px; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  }
 
   .fg-step {
     display: grid;
@@ -122,7 +121,8 @@
   .fg-note strong { color: #fff; }
 
   .fg-card {
-    padding: 32px;
+    margin-top: 40px;
+    padding: 40px 44px;
     border-radius: 18px;
     border: 1px solid rgba(0, 242, 255, .26);
     background: linear-gradient(180deg, var(--midnight), var(--slate));
@@ -142,8 +142,8 @@
   .fg-foot a { color: var(--cyan); text-decoration: none; }
   .fg-foot a:hover { text-decoration: underline; }
 
-  @media (max-width: 860px) {
-    .fg-grid { grid-template-columns: 1fr; gap: 42px; }
+  @media (max-width: 780px) {
+    .fg-steps { grid-template-columns: 1fr; }
     .fg-h1 { max-width: none; }
     .fg-card { padding: 26px; }
   }
@@ -165,52 +165,50 @@
       fixing it would actually involve.
     </p>
 
-    <div class="fg-grid">
-      <div>
-        <h2 class="fg-h2">What actually happens</h2>
+    <div class="fg-top">
+      <h2 class="fg-h2">What actually happens</h2>
 
-        <ol class="fg-steps">
-          <li class="fg-step">
-            <span class="fg-step-n">1</span>
-            <div>
-              <p class="fg-step-t">You tell us what's slowing you down</p>
-              <p class="fg-step-d">A process, a website, a system. One paragraph is plenty — the messier the better.</p>
-            </div>
-          </li>
-          <li class="fg-step">
-            <span class="fg-step-n">2</span>
-            <div>
-              <p class="fg-step-t">We map it, start to finish</p>
-              <p class="fg-step-d">Every step, who touches it, where it stalls, and roughly what it costs per month.</p>
-            </div>
-          </li>
-          <li class="fg-step">
-            <span class="fg-step-n">3</span>
-            <div>
-              <p class="fg-step-t">You get the before and after</p>
-              <p class="fg-step-d">A short walkthrough of the automated version, the hours it saves, and what it would take to build.</p>
-            </div>
-          </li>
-        </ol>
+      <ol class="fg-steps">
+        <li class="fg-step">
+          <span class="fg-step-n">1</span>
+          <div>
+            <p class="fg-step-t">You tell us what's slowing you down</p>
+            <p class="fg-step-d">A process, a website, a system. One paragraph is plenty — the messier the better.</p>
+          </div>
+        </li>
+        <li class="fg-step">
+          <span class="fg-step-n">2</span>
+          <div>
+            <p class="fg-step-t">We map it, start to finish</p>
+            <p class="fg-step-d">Every step, who touches it, where it stalls, and roughly what it costs per month.</p>
+          </div>
+        </li>
+        <li class="fg-step">
+          <span class="fg-step-n">3</span>
+          <div>
+            <p class="fg-step-t">You get the before and after</p>
+            <p class="fg-step-d">A short walkthrough of the automated version, the hours it saves, and what it would take to build.</p>
+          </div>
+        </li>
+      </ol>
 
-        <p class="fg-note">
-          <strong>Sometimes the answer is that it isn't worth fixing.</strong>
-          When that's true we say so. A job done twice a month by one person who
-          never gets it wrong is not a job worth paying to automate.
-        </p>
-      </div>
+      <p class="fg-note">
+        <strong>Sometimes the answer is that it isn't worth fixing.</strong>
+        When that's true we say so. A job done twice a month by one person who
+        never gets it wrong is not a job worth paying to automate.
+      </p>
+    </div>
 
-      <div class="fg-card">
-        <h2 class="fg-card-h">Book your audit</h2>
-        <p class="fg-card-s">Takes about a minute. We reply within one business day.</p>
+    <div class="fg-card">
+      <h2 class="fg-card-h">Book your audit</h2>
+      <p class="fg-card-s">Takes about a minute. We reply within one business day.</p>
 
-        <!-- EngageBay form "Free Automation Audit" (form id 5148115217416192).
-             Submissions land directly in the EngageBay CRM — no API call, so this
-             works regardless of the REST API plan tier. -->
-        <div class="engage-hub-form-embed"
-             id="eh_form_5148115217416192"
-             data-id="5148115217416192"></div>
-      </div>
+      <!-- EngageBay form "Free Automation Audit" (form id 5148115217416192).
+           Submissions land directly in the EngageBay CRM — no API call, so this
+           works regardless of the REST API plan tier. -->
+      <div class="engage-hub-form-embed"
+           id="eh_form_5148115217416192"
+           data-id="5148115217416192"></div>
     </div>
 
     <div class="fg-foot">
